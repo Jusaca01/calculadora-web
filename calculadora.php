@@ -11,7 +11,16 @@ function division(float $operando1, float $operando2): float {
     return $operando1 / $operando2;
 }
 
-$result = "";
+function suma(float $operando1, float $operando2): float {
+    return $operando1 + $operando2;
+}
+
+function resta(float $operando1, float $operando2): float {
+    return $operando1 - $operando2;
+}
+
+$resultado = "";
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $operando1 = isset($_POST) ? floatval($_POST["operando1"]) : 0;
@@ -20,12 +29,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     switch ($operacion) {
         case "multi":
-            $result = "Resultado: " . multiplicacion($operando1, $operando2);
+            $resultado = "Resultado: " . multiplicacion($operando1, $operando2);
             break;
         case "div":
-            $result = "Resultado: " . division($operando1, $operando2);
+            $resultado = "Resultado: " . division($operando1, $operando2);
+            break;
+        case "suma":
+            $resultado = "Resultado: " . suma($operando1, $operando2);
+            break;
+        case "resta":
+            $resultado = "Resultado: " . resta($operando1, $operando2);
             break;
     }
 }
 
-echo $result;
+echo $resultado;
