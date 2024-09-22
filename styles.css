@@ -1,0 +1,19 @@
+body {
+    background-color: rgba(36, 31, 31, 0.651);
+    color: whitesmoke;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#operacion {
+    padding: 20px;
+}

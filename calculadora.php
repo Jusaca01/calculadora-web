@@ -1,3 +1,19 @@
+<style>
+    body {
+        background-color: rgba(36, 31, 31, 0.651);
+        color: whitesmoke;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+
+        flex-direction: column;
+
+    }
+</style>
+
 <?php
 
 function multiplicacion(float $operando1, float $operando2): float {
@@ -23,8 +39,8 @@ $resultado = "";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $operando1 = isset($_POST) ? floatval($_POST["operando1"]) : 0;
-    $operando2 = isset($_POST) ? floatval($_POST["operando2"]) : 0;
+    $operando1 = isset($_POST) ? floatval($_POST["number1"]) : 0;
+    $operando2 = isset($_POST) ? floatval($_POST["number2"]) : 0;
     $operacion = $_POST["operacion"];
 
     switch ($operacion) {
@@ -43,4 +59,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-echo $resultado;
+echo "<h1>$resultado</h1>";
